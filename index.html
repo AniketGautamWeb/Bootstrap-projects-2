@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Amita;
+        }
+        
+        .main {
+            display: flex;
+        }
+        
+        .nav-link:hover {
+            border-radius: 20px;
+            color: blanchedalmond;
+        }
+        
+        .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            margin: 20px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 40px;
+            font-family: sans-serif;
+            overflow: hidden;
+            box-shadow: 5px 5px 10px rgba(238, 148, 20, 1);
+            transition: all .3s ease-out;
+        }
+        
+        h3 {
+            font-family: Amita;
+        }
+        
+        .icon:hover {
+            width: 200px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            color: #fff;
+        }
+        
+        .icon:hover i {
+            color: #fff;
+        }
+        
+        .icon .fa-facebook-f {
+            color: rgb(251, 253, 251);
+        }
+        
+        .fb:hover {
+            background: #1A6ED8;
+        }
+        
+        .lnk:hover {
+            background: #0077B5;
+        }
+        
+        .icon .fa-whatsapp {
+            color: rgb(251, 253, 251);
+        }
+        
+        .whatsapp:hover {
+            background: rgb(56, 238, 11);
+        }
+        
+        .icon .fa-instagram {
+            color: rgb(251, 253, 251);
+        }
+        
+        .instagram:hover {
+            background: #FE0000;
+        }
+        /* responsive */
+        
+        @media only screen and (min-width: 320px) and (max-width: 991px) {
+            .main {
+                flex-direction: row;
+            }
+        }
+        
+        @media only screen and (max-width: 420px) {
+            .icon:hover {
+                width: 50px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                color: #fff;
+                font-size: 8px;
+            }
+        }
+        
+        @media only screen and (min-width: 320px) and (max-width: 991px) {
+            .icon {
+                width: 30px;
+                height: 30px;
+                border-radius: 5px;
+                margin: 10px;
+                margin-left: 5px;
+                text-align: center;
+                font-size: 20px;
+                line-height: 30px;
+                font-family: sans-serif;
+                overflow: hidden;
+                box-shadow: 5px 10px 20px rgba(238, 148, 20, 1);
+                transition: all .3s ease-out;
+            }
+        }
+        
+        @media only screen and (min-width: 320px) and (max-width: 1024px) {
+            .navbar-top .navbar-brand {
+                display: none;
+            }
+        }
+        /*--------------Card-------------*/
+        
+        #container #card {
+            position: relative;
+            top: 25px;
+            display: flex;
+            justify-content: center;
+            width: 350px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 5px 10px 20px rgba(238, 148, 20, 1);
+            transition: 0.5s;
+        }
+        
+        #container #card:hover {
+            height: 400px;
+        }
+        
+        #container #card .img-box {
+            position: absolute;
+            top: 20px;
+            left: 22px;
+            height: 220px;
+            width: 300px;
+            background: #333;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+        
+        #container #card:hover .img-box {
+            top: -100px;
+            scale: 0.75;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+        }
+        
+        #container #card .img-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        #container #card .content {
+            position: absolute;
+            width: 100%;
+            top: 250px;
+            height: 35px;
+            padding: 0 30px;
+            text-align: center;
+            overflow: hidden;
+            transition: 00.5s;
+        }
+        
+        #container #card:hover .content {
+            top: 130px;
+            height: 250px;
+        }
+        
+        @media only screen and (min-width: 320px) and (max-width: 425px) {
+            #container #card {
+                position: relative;
+                top: 20px;
+                display: flex;
+                justify-content: center;
+                width: 250px;
+                height: 220px;
+                background-color: #fff;
+                border-radius: 20px;
+                box-shadow: 5px 10px 20px rgba(238, 148, 20, 1);
+                transition: 0.5s;
+            }
+        }
+        
+        @media only screen and (min-width: 320px) and (max-width: 425px) {
+            #container #card .img-box {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                top: 20px;
+                left: 25px;
+                height: 150px;
+                width: 200px;
+                background: #333;
+                border-radius: 12px;
+                overflow: hidden;
+                transition: 0.5s;
+            }
+        }
+        
+        @media only screen and (min-width: 768px) and (max-width: 768px) {
+            #container #card .img-box {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                top: 20px;
+                left: 20px;
+                height: 150px;
+                width: 170px;
+                background: #333;
+                border-radius: 12px;
+                overflow: hidden;
+                transition: 0.5s;
+            }
+        }
+        
+        @media only screen and (min-width: 1024px) and (max-width: 1024px) {
+            #container #card .img-box {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                top: 20px;
+                left: 20px;
+                height: 220px;
+                width: 250px;
+                background: #333;
+                border-radius: 12px;
+                overflow: hidden;
+                transition: 0.5s;
+            }
+        }
+        
+        @media only screen and (min-width: 768px) and (max-width: 768px) {
+            #container #card {
+                position: relative;
+                top: 20px;
+                display: flex;
+                justify-content: center;
+                width: 250px;
+                height: 220px;
+                background-color: #fff;
+                border-radius: 20px;
+                box-shadow: 5px 10px 20px rgba(238, 148, 20, 1);
+                transition: 0.5s;
+            }
+        }
+        
+        @media only screen and (min-width: 768px) and (max-width: 768px) {
+            #container #card .content {
+                position: absolute;
+                width: 100%;
+                top: 170px;
+                height: 35px;
+                padding: 0 30px;
+                text-align: center;
+                overflow: hidden;
+                transition: 00.5s;
+            }
+        }
+        
+        .col-md-4 {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        
+        @media only screen and (min-width: 320px) and (max-width: 425px) {
+            #container #card .content {
+                position: absolute;
+                width: 100%;
+                top: 170px;
+                height: 35px;
+                padding: 0 30px;
+                text-align: center;
+                overflow: hidden;
+                transition: 00.5s;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" id="nav" style="background: rgb(2,0,36);
+ background: radial-gradient(circle, rgba(2, 0, 36, 0.8996848739495799) 0%, rgba(55, 54, 69, 1) 0%, rgba(238, 148, 20, 1) 0%, rgba(68, 62, 61, 1) 100%, rgba(0, 212, 255, 1) 100%);
+        ">
+        <div class="navbar-top">
+            <div class=" logo ">
+                <h3 style="font-weight: bold; text-shadow: 2px 2px 4px #000000;">Suhani Furniture</h3>
+            </div><a class="navbar-brand" style="color: blanchedalmond; font-weight: bold; font-size: 15px;  text-shadow: 2px 2px 4px #000000;">⦿ PALGHAR,
+        MAHARASHTRA,
+        INDIA. | DHANU TO VIRAR FAST SHIPPING.</a>
+            <div class="main">
+                <!-- Facebook Icon -->
+                <div class="icon fb"><i class="fa-brands fa-lg fa-facebook-f"></i><span>Facebook</span></div>
+                <!-- Whatsapp Icon -->
+                <div class="icon whatsapp"><a href="https://web.whatsapp.com/" target="_blank"><i class="fa-brands fa-lg fa-whatsapp"></i></a><a href="https://web.whatsapp.com/" target="_blank" style="text-decoration: none;color: #fff;"><span>Whatsapp</span></a></div>
+                <!-- Instagram Icon -->
+                <div class="icon instagram"><i class="fa-brands fa-instagram fa-lg"></i><span>Instagram</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <nav class="navbar navbar-expand-md" id="navbar-color">
+            <!-- Toggler/collapsibe Button --><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span></button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href=" # ">Home</a></li>
+                    <li class="nav-item "><a class="nav-link " href="shop.html ">Custom </a></li>
+                    <li class="nav-item "><a class="nav-link " href="# ">Top</a></li>
+                    <li class="nav-item "><a class="nav-link " href="gallery.html ">Recent</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content " id="make">
+            <h1 class=" animate__animated animate__fadeInRight ">Make Your Home <br>Modern design </h1>
+            <p class=" animate__animated animate__fadeInUp ">Lorem ipsum dolor sit amet consectetur adipisicing elit.Culpa sequi voluptates dolore autem earum porro reprehenderit! Iste accusamus pariatur in? </p>
+        </div>
+    </div>
+    <!---------card-------->
+    <div class="container my-5 ">
+        <!-- Gradient divider -->
+        <div class="mb-4 ">
+            <hr data-content="SERVICES " class="hr-text ">
+        </div>
+        <div class="row " style="margin-top: 50px; ">
+            <div class="col-md-4 py-3 py-md-0 ">
+                <div class="card "><img src="img/img4.jpg " class="card image-top " height="200px " alt=" ">
+                    <div class="overlay "><img src="img/img8.jpg " alt=" " class="img-fluid d-block " class="img1 "></div>
+                    <div class="card-body ">
+                        <h5 class="card-title text-center ">Custom Menus</h5>
+                        <p class="card-text text-center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi voluptates dolore autem earum porro reprehenderit! Iste accusamus pariatur in?</p>
+                        <div id="btn1 " class="text-center "><button>View more</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0 ">
+                <div class="card "><img src="img/img6.jpg " class="card image-top " height="200px " alt=" ">
+                    <div class="overlay "><img src="img/img7.jpg " alt=" " class="img-fluid d-block " class="img1 "></div>
+                    <div class="card-body ">
+                        <h5 class="card-title text-center ">Smartest way</h5>
+                        <p class="card-text text-center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi voluptates dolore autem earum porro reprehenderit! Iste accusamus pariatur in?</p>
+                        <div id="btn1 " class="text-center "><button>View more</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0 ">
+                <div class="card "><img src="img/img3.jpg " class="card image-top " height="200px " alt=" ">
+                    <div class="overlay "><img src="img/img5.jpg " alt=" " class="img-fluid d-block " class="img1 "></div>
+                    <div class="card-body ">
+                        <h5 class="card-title text-center ">User Friendly</h5>
+                        <p class="card-text text-center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi voluptates dolore autem earum porro reprehenderit! Iste accusamus pariatur in?</p>
+                        <div id="btn1 " class="text-center "><button>View more</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------hrtext-------------------------->
+    <div class="container ">
+        <div class="row ">
+            <div class="col ">
+                <div class="mb-4 ">
+                    <hr data-content="Members " class="hr-text ">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------Members--------------------->
+    <div class="container " id="container">
+        <div class="row">
+            <div class="col-md-4 ">
+                <div class="card" id="card">
+                    <div class="img-box"><img src="img/img2.jpg" alt=""></div>
+                    <div class="content">
+                        <h2>Member1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, in!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="card" id="card">
+                    <div class="img-box"><img src="img/img3.jpg" alt=""></div>
+                    <div class="content">
+                        <h2>Member1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, in!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" id="card">
+                    <div class="img-box"><img src="img/img4.jpg" alt=""></div>
+                    <div class="content">
+                        <h2>Member1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, in!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-------------------------------footer---------------------------------------------------->
+    <div id="footer ">
+        <div class="container-fluid ">
+            <div class="row ">
+                <div class="col ">
+                    <div class="text-center m-4 ">
+                        <p data-toggle="tooltip " title="Helping each other make better choice " data-placement="bottom ">Checkout our 117 reviews <i class="fa fa-star "></i><i class="fa fa-star "></i><i class="fa fa-star "></i><i class="fa fa-star "></i><i class="fa fa-star-half-o " aria-hidden="true "></i>Trustpilot </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row p-3 " style="background: rgb(2,0,36);
+ background: radial-gradient(circle, rgba(2, 0, 36, 0.8996848739495799) 0%, rgba(55, 54, 69, 1) 0%, rgba(238, 148, 20, 1) 0%, rgba(68, 62, 61, 1) 100%, rgba(0, 212, 255, 1) 100%);
+        color: #fff;
+        ">
+                <div class="col-md-3 ">
+                    <div class="row py-3 ">customer service </div>
+                    <div class="row py-3 ">FAQ </div>
+                    <div class="row py-3 ">privacy policy </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="row py-3 ">About us </div>
+                    <div class="row py-3 ">Contact us </div>
+                    <div class="row py-3 ">Blog </div>
+                </div>
+                <div class="col-md-3 ">
+                    <div class="row py-3 ">
+                        <div class="col "><i class="fa fa-check-square fa-lg " aria-hidden="true "></i>100% Warranty on all products at Tiyana.in </div>
+                    </div>
+                    <div class="row py-3 ">
+                        <div class="col mr-auto "><i class="fa fa-inr fa-lg mr-auto " aria-hidden="true "></i>All products are shipped with GST bills, you will be eligible to take input credit. </div>
+                    </div>
+                    <div class="row py-3 ">
+                        <div class="col "><i class="fa fa-credit-card-alt fa-lg " aria-hidden="true "></i></i>Secure and safe purchase using Credit Card, Debit Card, Net Banking, Mobile Wallets. </div>
+                    </div>
+                </div>
+                <div class="col ">
+                    <div class="row py-3 ">
+                        <div class="col text-center "><a href=" ">Tiyana Incorportion</a></div>
+                    </div>
+                    <div class="row py-3 ">
+                        <div class="col text-center "><a href=" ">Address: B-721,
+        Jaswanti Allied Business Centre,
+        Malad (W),
+        Mumbai-64,
+        INDIA.</a></div>
+                    </div>
+                    <div class="row py-3 ">
+                        <div class="col text-center "><a href=" ">Customer Care Hotline<br>+91-8828266102 </a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!---------------Footer--------------------->
+    <div class="container-fluid bg-dark ">
+        <div class="row p-3 ">
+            <div class="col text-center " style="color: blanchedalmond; ">
+                <p>Copyright © 2023 SUHANI FURNITURE - Official ANIKET</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
